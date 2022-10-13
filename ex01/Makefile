@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/13 15:08:06 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/10/13 15:08:07 by rel-fagr         ###   ########.fr        #
+#    Created: 2022/10/13 15:08:19 by rel-fagr          #+#    #+#              #
+#    Updated: 2022/10/13 16:30:05 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFILES = megaphone.cpp
+CFILES = MyAwesomePhoneBook.cpp
 OFILES = ${CFILES:.cpp=.opp}
 
 CC = g++
 W = -Wall -Werror -Wextra -std=c++98
-NAME = megaphone
+NAME = phonebook
 
 all : ${OFILES} ${INC}
 	@${CC} ${W} ${CFILES} -o ${NAME}
