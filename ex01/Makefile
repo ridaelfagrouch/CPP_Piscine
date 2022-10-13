@@ -6,21 +6,21 @@
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 15:08:19 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/10/13 16:30:05 by rel-fagr         ###   ########.fr        #
+#    Updated: 2022/10/13 22:25:45 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFILES = MyAwesomePhoneBook.cpp
+CFILES = MyAwesomePhoneBook.cpp phonebook.cpp contact.cpp
 OFILES = ${CFILES:.cpp=.opp}
 
 CC = g++
 W = -Wall -Werror -Wextra -std=c++98
 NAME = phonebook
 
-all : ${OFILES} ${INC}
+all : ${OFILES}
 	@${CC} ${W} ${CFILES} -o ${NAME}
 
-%.opp:%.cpp
+%.opp:%.cpp 
 	@${CC} ${W} -o $@ -c $<
 
 clean:
