@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:14:55 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/14 04:35:11 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/14 05:39:13 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,14 @@ void	PhoneBook::print_contact(PhoneBook phone, int count)
 	int	index;
 	std::cout << "choose your contact index : ";
     std::getline(std::cin, phone.check);
+	if (std::cin.eof())
+            exit(1);
 	while(phone.check_index() == 0)
     {
         std::cout << "choose your contact index : ";
         std::getline(std::cin, phone.check);
+		if (std::cin.eof())
+            exit(1);
     }
 	index = atoi(phone.check.c_str());
 	if (index > 0 && index <= 8 && (index - 1 <= count))
