@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:17:32 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/14 02:06:31 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/14 03:34:21 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,12 @@ int main()
         else if (str == "SEARCH")
         {
             phone.search_contact(count);
-            std::cout << "enter index between 1->8 :";
-            std::getline(std::cin, phone.check);
-            while(phone.check_index() == 0)
-            {
-                phone.check = nullptr;
-                std::cout << "enter index between 1->8 : ";
-                std::getline(std::cin, phone.check);
-            }
+            phone.print_contact(phone, count);
         }
         else if (str == "EXIT")
             break ;
         else
-        {
             std::cout << "\033[1;31minvalid command!!\033[0m" << std::endl;
-            PrintEntre();
-        }
+        PrintEntre();
     }
 }

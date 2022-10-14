@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:32:16 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/13 23:06:43 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/14 03:26:57 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@
 class    Contact
 {
     private:
-        std::string     firstName;
-        std::string     lastName;
-        std::string     nickName;
-        std::string     phoneNumber;
-        std::string     darkestSecret;
+        std::string     FirstName;
+        std::string     LastName;
+        std::string     NickName;
+        std::string     PhoneNumber;
+        std::string     DarkestSecret;
     public:
         void    set_info(void);
-        std::string get_firstname(void);
-        std::string get_lastname(void);
-        std::string get_nickname(void);
+        std::string get_FirstName(void);
+        std::string get_LastName(void);
+        std::string get_NickName(void);
+        std::string get_PhoneNumber(void);
+        std::string get_DarkestSecret(void);
 };
 
 #endif

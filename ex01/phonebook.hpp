@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:30:26 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/14 01:55:18 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/14 02:56:53 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class PhoneBook
         void    creat_contact(int *index, int *count);
         void	search_contact(int count);
         int     check_index(void);
-        void    print_contact(void);
+        void    print_contact(PhoneBook phone, int count);
 };
 
 

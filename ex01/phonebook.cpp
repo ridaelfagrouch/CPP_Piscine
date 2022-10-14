@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:14:55 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/14 02:05:06 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/14 04:35:11 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 void    PhoneBook::creat_contact(int *index, int *count)
 {
-	if (*index > 7)
+	if (*index == 8)
 		*index = 0;
-	if (*index < 8)
+	if (*index < 8 && *count != 7)
 		(*count)++;
 	this->arr[*index].set_info();
 	(*index)++;
@@ -54,9 +54,9 @@ void	PhoneBook::search_contact(int count)
 	for(int i = 0; i <= count; i++)
 	{
 		std::cout << "|" << std::setfill(' ') << std::setw(10) << i + 1;
-		print_list(this->arr[i].get_firstname());
-		print_list(this->arr[i].get_lastname());
-		print_list(this->arr[i].get_nickname());
+		print_list(this->arr[i].get_FirstName());
+		print_list(this->arr[i].get_LastName());
+		print_list(this->arr[i].get_NickName());
 		std::cout << "|" << std::endl << " " << std::setfill('-') << std::setw(44)<< " " << std::endl;
 	}
 }
@@ -81,7 +81,33 @@ int	PhoneBook::check_index(void)
 		return(1);
 	else
 	{
-		std::cout << "\033[1;31minvalid index!!\033[0m" << std::endl;
+		std::cout << "\033[1;31minvalid index!!\033[0m " << std::endl;
 		return(0);
 	}
+}
+
+/*----------------------------------------------------------------------------*/
+
+
+void	PhoneBook::print_contact(PhoneBook phone, int count)
+{
+	int	index;
+	std::cout << "choose your contact index : ";
+    std::getline(std::cin, phone.check);
+	while(phone.check_index() == 0)
+    {
+        std::cout << "choose your contact index : ";
+        std::getline(std::cin, phone.check);
+    }
+	index = atoi(phone.check.c_str());
+	if (index > 0 && index <= 8 && (index - 1 <= count))
+	{
+		std::cout << "firstName : " << this->arr[index - 1].get_FirstName() << std::endl;
+		std::cout << "LastName : " << this->arr[index - 1].get_LastName() << std::endl;
+		std::cout << "NickName : " << this->arr[index - 1].get_NickName() << std::endl;
+		std::cout << "PhoneNumber : " << this->arr[index - 1].get_PhoneNumber() << std::endl;
+		std::cout << "DarkestSecret : " << this->arr[index - 1].get_DarkestSecret() << std::endl;
+	}
+	else
+		std::cout << "\033[1;31minvalid index!!\033[0m " << std::endl;
 }
