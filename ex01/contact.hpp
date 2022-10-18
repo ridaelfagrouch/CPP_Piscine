@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:32:16 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/15 22:34:23 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:09:50 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <string>
 # include <iostream>
-# include <stdlib.h>
 
 class    Contact
 {
