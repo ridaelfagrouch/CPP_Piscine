@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tests.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/15 22:55:37 by rel-fagr          #+#    #+#             */
+/*   Updated: 2022/10/18 10:08:40 by rel-fagr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <vector>
 #include <algorithm>
 #include <functional>
@@ -34,7 +46,6 @@ int		main( void ) {
 	for ( acc_int_t it( acc_begin, dep_begin );
 		  it.first != acc_end && it.second != dep_end;
 		  ++(it.first), ++(it.second) ) {
-
 		(*(it.first)).makeDeposit( *(it.second) );
 	}
 

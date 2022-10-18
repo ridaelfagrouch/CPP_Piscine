@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 22:12:51 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/14 05:48:26 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/16 00:44:51 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ std::string	print_field(std::string ptr)
 
 /*----------------------------------------------------------------------------*/
 
- void    Contact::set_info(void)
+void    Contact::set_info(void)
 {
     this->FirstName = print_field("FirstName: ");
     this->LastName = print_field("LastName: ");

@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/15 22:55:29 by rel-fagr          #+#    #+#             */
+/*   Updated: 2022/10/18 10:24:40 by rel-fagr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #pragma once
 #ifndef __ACCOUNT_H__
@@ -18,10 +28,10 @@ public:
 
 	typedef Account		t;
 
-	static int	getNbAccounts( void );
-	static int	getTotalAmount( void );
-	static int	getNbDeposits( void );
-	static int	getNbWithdrawals( void );
+	static int	getNbAccounts( void );//x
+	static int	getTotalAmount( void );//x
+	static int	getNbDeposits( void );//x
+	static int	getNbWithdrawals( void );//x
 	static void	displayAccountsInfos( void );
 
 	Account( int initial_deposit );
@@ -47,7 +57,7 @@ private:
 	int				_nbDeposits;
 	int				_nbWithdrawals;
 
-	Account( void );
+	Account( void );//x
 
 };
 
