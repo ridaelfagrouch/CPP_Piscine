@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:03:01 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/19 02:00:48 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/19 23:04:21 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie
     private:
         std::string name;
     public:
-        void announce( void );
+        void    announce( void );
         Zombie(std::string str);
         ~Zombie(void);
 };
