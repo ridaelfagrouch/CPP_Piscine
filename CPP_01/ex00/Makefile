@@ -5,22 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/17 20:10:20 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/10/19 01:07:47 by rel-fagr         ###   ########.fr        #
+#    Created: 2022/10/19 01:02:50 by rel-fagr          #+#    #+#              #
+#    Updated: 2022/10/19 01:58:14 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFILES = Account.cpp tests.cpp
+CFILES = main.cpp Zombie.cpp newZombie.cpp ramdomChump.cpp
 OFILES = ${CFILES:.cpp=.opp}
 
 CC = c++
 W = -Wall -Werror -Wextra -std=c++98
-NAME = The_Job_Of_Your_Dreams
+NAME = BraiiiiiiinnnzzzZ
 
 all : ${OFILES}
 	@${CC} ${W} ${CFILES} -o ${NAME}
 
-%.opp:%.cpp 
+%.opp:%.cpp
 	@${CC} ${W} -o $@ -c $<
 
 clean:
