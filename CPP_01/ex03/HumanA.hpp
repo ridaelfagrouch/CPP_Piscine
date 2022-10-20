@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 00:39:36 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/20 04:45:09 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/20 05:00:21 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ class HumanA
         HumanA(std::string name, Weapon &weapon);
         void    attack(void);
 };
-
 
 #endif
