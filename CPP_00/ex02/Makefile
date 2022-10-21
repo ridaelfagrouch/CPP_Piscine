@@ -6,22 +6,22 @@
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 20:10:20 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/10/19 01:07:47 by rel-fagr         ###   ########.fr        #
+#    Updated: 2022/10/22 00:10:43 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFILES = Account.cpp tests.cpp
 OFILES = ${CFILES:.cpp=.opp}
 
-CC = c++
-W = -Wall -Werror -Wextra -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = The_Job_Of_Your_Dreams
 
 all : ${OFILES}
-	@${CC} ${W} ${CFILES} -o ${NAME}
+	@${CXX} ${CXXFLAGS} ${CFILES} -o ${NAME}
 
-%.opp:%.cpp 
-	@${CC} ${W} -o $@ -c $<
+%.opp:%.cpp
+	@${CXX} ${CXXFLAGS} -o $@ -c $<
 
 clean:
 	@rm -f ${OFILES} ${OBONUS}

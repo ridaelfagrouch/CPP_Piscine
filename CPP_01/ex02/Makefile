@@ -6,7 +6,7 @@
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 00:27:19 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/10/20 00:27:46 by rel-fagr         ###   ########.fr        #
+#    Updated: 2022/10/22 00:07:25 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,15 @@ CFILES = main.cpp
 
 OFILES = ${CFILES:.cpp=.opp}
 
-CC = c++
-W = -Wall -Werror -Wextra -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = HI_THIS_IS_BRAIN
 
 all : ${OFILES}
-	@${CC} ${W} ${CFILES} -o ${NAME}
+	@${CXX} ${CXX} ${CFILES} -o ${NAME}
 
 %.opp:%.cpp
-	@${CC} ${W} -o $@ -c $<
+	@${CXX} ${CXXFLAGS} -o $@ -c $<
 
 clean:
 	@rm -f ${OFILES} ${OBONUS}

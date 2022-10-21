@@ -6,7 +6,7 @@
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 05:02:10 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/10/20 05:28:36 by rel-fagr         ###   ########.fr        #
+#    Updated: 2022/10/22 00:05:26 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,15 @@ CFILES = main.cpp
 
 OFILES = ${CFILES:.cpp=.opp}
 
-CC = c++
-W = -Wall -Werror -Wextra -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = Sed_is_for_losers
 
 all : ${OFILES}
-	@${CC} ${W} ${CFILES} -o ${NAME}
+	@${CXX} ${CXXFLAGS} ${CFILES} -o ${NAME}
 
 %.opp:%.cpp
-	@${CC} ${W} -o $@ -c $<
+	@${CC} ${CXXFLAGS} -o $@ -c $<
 
 clean:
 	@rm -f ${OFILES} ${OBONUS}
