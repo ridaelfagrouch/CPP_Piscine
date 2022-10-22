@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/20 05:02:10 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/10/22 02:29:10 by rel-fagr         ###   ########.fr        #
+#    Created: 2022/10/22 00:15:21 by rel-fagr          #+#    #+#              #
+#    Updated: 2022/10/22 00:16:06 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFILES = main.cpp
+CFILES = main.cpp Harl.cpp
 
 OFILES = ${CFILES:.cpp=.opp}
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
-NAME = Sed_is_for_losers
+NAME = Harl_2.0
 
 all : ${OFILES}
 	@${CXX} ${CXXFLAGS} ${CFILES} -o ${NAME}
@@ -30,4 +30,4 @@ clean:
 fclean : clean
 	@rm -f ${NAME}
 
-re: fclean all
+re : fclean all

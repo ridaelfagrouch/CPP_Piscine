@@ -6,14 +6,12 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 05:02:05 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/21 23:59:30 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/22 02:37:00 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
-#include <regex>
-
 
 void file_manipulate(char **av)
 {
@@ -21,14 +19,17 @@ void file_manipulate(char **av)
     std::string strFind = av[2];
     std::string strReplace = av[3];
     std::string appendLine;
+    std::string freplace = "";
     std::fstream file;
     size_t i = 0;
     size_t pos;
+    
+    if (strFind.empty()) std::exit(EXIT_FAILURE);
     file.open(av[1], std::fstream::in);
-    if (!file)
-        std::cout << "Can't open input file!" << std::endl , std::exit(EXIT_FAILURE);
+    if (!file.is_open()) std::cout << "Can't open input file!" << std::endl , std::exit(EXIT_FAILURE);
     while (!std::getline(file, line).eof())
         appendLine.append(line).append("\n");
+        
     while (1)
     {
         pos = appendLine.find(strFind, i);
@@ -38,7 +39,8 @@ void file_manipulate(char **av)
         appendLine.erase(i, strFind.length());
     }
     file.close();
-    file.open(av[1], std::fstream::out | std::fstream::trunc);
+    freplace.append(av[1]).append(".replace");
+    file.open(freplace, std::fstream::out | std::fstream::trunc);
     file << appendLine << std::endl;
     file.close();
 }
