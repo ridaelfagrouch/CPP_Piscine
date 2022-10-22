@@ -6,12 +6,11 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 02:22:48 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/19 23:42:42 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:40:43 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#pragma once
 
 #include <iostream>
 
@@ -26,5 +25,3 @@ public:
 };
 
 Zombie* zombieHorde( int N, std::string name );
-
-#endif

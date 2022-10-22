@@ -6,12 +6,11 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 00:39:42 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/20 04:42:19 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:40:10 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#pragma once
 
 # include "Weapon.hpp"
 
@@ -25,5 +24,3 @@ class HumanB
         void    attack(void);
         void    setWeapon(Weapon &setWep);
 };
-
-#endif

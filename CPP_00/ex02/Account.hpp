@@ -6,13 +6,12 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 22:55:29 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/21 00:13:41 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:41:23 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __ACCOUNT_H__
-#define __ACCOUNT_H__
+
 
 #include<iostream>
 #include<ctime>
@@ -60,5 +59,3 @@ private:
 	Account( void );
 
 };
-
-#endif

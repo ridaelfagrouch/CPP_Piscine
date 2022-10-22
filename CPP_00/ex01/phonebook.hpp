@@ -6,12 +6,11 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:30:26 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/14 04:54:04 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:41:50 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define  PHONEBOOK_HPP
+#pragma once
 
 #include "contact.hpp"
 #include <iomanip>
@@ -30,4 +29,4 @@ class PhoneBook
         void    print_contact(PhoneBook phone, int count);
 };
 
-#endif
+

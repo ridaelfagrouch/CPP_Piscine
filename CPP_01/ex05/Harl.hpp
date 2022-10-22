@@ -6,7 +6,30 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 00:16:22 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/22 00:16:23 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:39:25 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+
+#include <iostream>
+
+class Harl
+{
+    private:
+        void debug( void );
+        void info( void );
+        void warning( void );
+        void error( void );
+    public:
+        // Harl(/* args */);
+        // ~Harl();
+        void complain( std::string level );
+};
+
+
+
+
+
+
 

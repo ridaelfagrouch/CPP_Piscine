@@ -6,12 +6,11 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 00:39:53 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/20 03:03:41 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:40:25 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#pragma once
 
 #include <iostream>
 
@@ -25,5 +24,4 @@ class Weapon
         Weapon(std::string wep_type);
 };
 
-
-#endif
+#pragma once

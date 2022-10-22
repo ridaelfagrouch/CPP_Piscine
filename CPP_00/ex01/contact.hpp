@@ -6,12 +6,11 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:32:16 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/18 12:09:50 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:41:40 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#pragma once
 
 # include <string>
 # include <iostream>
@@ -33,4 +32,3 @@ class    Contact
         std::string get_DarkestSecret(void);
 };
 
-#endif
