@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 05:02:05 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/22 02:37:00 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/22 02:51:15 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void file_manipulate(char **av)
     std::fstream file;
     size_t i = 0;
     size_t pos;
-    
-    if (strFind.empty()) std::exit(EXIT_FAILURE);
+
     file.open(av[1], std::fstream::in);
     if (!file.is_open()) std::cout << "Can't open input file!" << std::endl , std::exit(EXIT_FAILURE);
     while (!std::getline(file, line).eof())
@@ -33,7 +32,7 @@ void file_manipulate(char **av)
     while (1)
     {
         pos = appendLine.find(strFind, i);
-        if (pos == (size_t) -1) break;
+        if (pos == (size_t) -1 || strFind.empty()) break;
         appendLine.insert(pos, strReplace);
         i = pos + strReplace.length();
         appendLine.erase(i, strFind.length());
