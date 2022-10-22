@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 00:16:18 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/22 06:23:15 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/22 23:50:28 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void Harl::error( void )
 
 void Harl::complain( std::string level )
 {
-   void (Harl::*ptr)();
-   ptr = &Harl::debug;
-
-
-   
-   
+    typedef void (Harl::*MemFuncPtr)();
+    MemFuncPtr arr2[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    std::string arr1[] = {"debug", "info", "warning", "error"};
+    
+    for(int i = 0; i < 4; i++)
+        if(arr1[i] == level) (this->*arr2[i])();
 }
