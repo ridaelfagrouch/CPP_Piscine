@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 05:02:05 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/22 02:51:15 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/23 02:48:17 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void file_manipulate(char **av)
     file.close();
     freplace.append(av[1]).append(".replace");
     file.open(freplace, std::fstream::out | std::fstream::trunc);
+    appendLine.pop_back();
     file << appendLine << std::endl;
     file.close();
 }

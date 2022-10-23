@@ -6,7 +6,7 @@
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 05:02:10 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/10/22 02:29:10 by rel-fagr         ###   ########.fr        #
+#    Updated: 2022/10/23 02:48:51 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ clean:
 	@rm -f ${OFILES} ${OBONUS}
 
 fclean : clean
-	@rm -f ${NAME}
+	@rm -f ${NAME} *.replace
 
-re: fclean all
+re : fclean all
+

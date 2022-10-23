@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 02:22:51 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/19 23:49:14 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/23 02:14:32 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ Zombie* zombieHorde( int N, std::string name )
 {
     Zombie *arr;
 
-    arr = new Zombie[N];
+    arr = new(std::nothrow) Zombie[N];
+    if (arr == NULL)
+        exit(1);
     for (int i = 0; i < N; i++)
     {
         arr[i].set_name(name);

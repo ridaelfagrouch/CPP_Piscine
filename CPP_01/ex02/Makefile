@@ -6,7 +6,7 @@
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 00:27:19 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/10/22 00:07:25 by rel-fagr         ###   ########.fr        #
+#    Updated: 2022/10/23 01:39:00 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = HI_THIS_IS_BRAIN
 
 all : ${OFILES}
-	@${CXX} ${CXX} ${CFILES} -o ${NAME}
+	@${CXX} ${CXXFLAGS} ${CFILES} -o ${NAME}
 
 %.opp:%.cpp
 	@${CXX} ${CXXFLAGS} -o $@ -c $<
