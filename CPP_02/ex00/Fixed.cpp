@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 01:02:53 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/23 03:32:35 by rel-fagr         ###   ########.fr       */
+/*   Created: 2022/10/27 05:14:53 by rel-fagr          #+#    #+#             */
+/*   Updated: 2022/10/27 06:12:06 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-Zombie* newZombie( std::string name )
+Fixed::Fixed() 
+{ 
+    this->fixed_number = 0; 
+}
+
+Fixed::~Fixed() {}
+
+Fixed    Fixed::operator=(const Fixed &rhs)
 {
-    Zombie *str_ptr = new(std::nothrow) Zombie(name);
-    if (str_ptr == NULL)
-        exit(1);
-    return str_ptr;
+    if (this != &rhs)
+    {
+        this->fixed_number = rhs.fixed_number;
+    }
+    return *this;
 }

@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 01:02:53 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/23 03:32:35 by rel-fagr         ###   ########.fr       */
+/*   Created: 2022/10/27 05:12:06 by rel-fagr          #+#    #+#             */
+/*   Updated: 2022/10/27 06:20:54 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-Zombie* newZombie( std::string name )
+#include <iostream>
+
+class Fixed
 {
-    Zombie *str_ptr = new(std::nothrow) Zombie(name);
-    if (str_ptr == NULL)
-        exit(1);
-    return str_ptr;
-}
+private:
+    int fixed_number;
+    static const int fractional;
+public:
+    Fixed();
+    ~Fixed();
+    Fixed(const Fixed &other);
+    Fixed operator=(const Fixed &rhs);
+    int getRawBits(void) const;
+    void    setRawBits(int const raw);
+};
+
+
+
