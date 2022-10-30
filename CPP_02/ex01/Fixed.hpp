@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 03:49:34 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/30 13:02:04 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/30 13:40:56 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,4 @@ public:
     int toInt( void ) const;
 };
 
-std::ostream& operator<< (std::ostream& output, Fixed & obj);
+std::ostream& operator<< (std::ostream& output, const Fixed & obj);

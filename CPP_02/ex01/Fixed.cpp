@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 03:18:36 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/30 13:06:02 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/30 13:41:09 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int Fixed::toInt( void ) const
     return this->fixed_number >> this->scale;
 }
 
-std::ostream& operator<< (std::ostream& output, Fixed & obj)
+std::ostream& operator<< (std::ostream& output, const Fixed & obj)
 {
     output << obj.toFloat();
     return output;

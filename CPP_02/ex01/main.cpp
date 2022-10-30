@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 03:18:43 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/30 13:28:03 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/30 13:40:37 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int main( void ) {
     Fixed a;
-    Fixed b( 10 );
-    Fixed c( 42.42f );
-    Fixed d( b );
+    Fixed const b( 10 );
+    Fixed const c( 42.42f );
+    Fixed const d( b );
 
     a = Fixed( 1234.4321f );
     std::cout << "a is " << a << std::endl;
