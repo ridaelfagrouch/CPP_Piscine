@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 03:18:36 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/30 13:41:09 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/30 18:23:34 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ Fixed::Fixed(const int int_point)
 Fixed::Fixed(const float float_point)
 {
     std::cout << "Float constructor called" << std::endl;
-    this->fixed_number = (float_point) * (float)(1<<this->scale);
+    this->fixed_number = roundf((float_point) * (float)(1<<this->scale));
 }
 
 Fixed::Fixed(const Fixed &other)
 {
     std::cout << "Copy constructor called" << std::endl;
     this->fixed_number = other.fixed_number;
+    *this = other;
 }
 
 Fixed::~Fixed()

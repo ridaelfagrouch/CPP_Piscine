@@ -6,13 +6,14 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 03:49:34 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/30 15:43:11 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/30 18:23:59 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
