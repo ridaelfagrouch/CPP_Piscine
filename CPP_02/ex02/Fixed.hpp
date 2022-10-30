@@ -6,13 +6,14 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:46:25 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/30 17:16:22 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/30 19:18:54 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -25,21 +26,23 @@ public:
     Fixed(const float float_point);
     ~Fixed();
     Fixed(const Fixed &other);
-    Fixed &operator=(const Fixed &rhs);
+    int getRawBits(void) const;
+    void    setRawBits(int const raw);
+    Fixed &operator = (const Fixed &rhs);
+    // Fixed &operator * (Fixed &lhs, Fixed &rhs);
+    // Fixed &operator + (Fixed &lhs, Fixed &rhs);
+    // Fixed &operator - (Fixed &lhs, Fixed &rhs);
+    // Fixed &operator / (Fixed &lhs, Fixed &rhs);
     friend bool operator > (Fixed &lhs, Fixed &rhs); 
     friend bool operator < (Fixed &lhs, Fixed &rhs); 
     friend bool operator >= (Fixed &lhs, Fixed &rhs); 
     friend bool operator <= (Fixed &lhs, Fixed &rhs); 
     friend bool operator == (Fixed &lhs, Fixed &rhs); 
     friend bool operator != (Fixed &lhs, Fixed &rhs); 
-    Fixed operator++(int);
-    Fixed operator++();
-    Fixed operator--(int);
-    Fixed operator--();
-    Fixed operator * (Fixed rhs);
-    Fixed operator + (Fixed rhs);
-    Fixed operator - (Fixed rhs);
-    Fixed operator / (Fixed rhs);
+    Fixed operator ++ (int);
+    Fixed operator ++ ();
+    Fixed operator -- (int);
+    Fixed operator -- ();
     float toFloat( void ) const;
     int toInt( void ) const;
     static Fixed &min(Fixed& ob1, Fixed& ob2);

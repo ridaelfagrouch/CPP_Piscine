@@ -6,11 +6,21 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:46:21 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/30 18:21:16 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/30 19:19:05 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+int Fixed::getRawBits(void) const
+{
+    return fixed_number;
+}
+
+void    Fixed::setRawBits(int const raw)
+{
+    this->fixed_number = raw;
+}
 
 Fixed::Fixed() 
 { 
@@ -24,7 +34,8 @@ Fixed::Fixed(const int int_point)
 
 Fixed::Fixed(const float float_point)
 {
-    this->fixed_number = (float_point) * (float)(1<<this->scale);
+    std::cout << "Float constructor called" << std::endl;
+    this->fixed_number = roundf((float_point) * (float)(1<<this->scale));
 }
 
 Fixed::Fixed(const Fixed &other)
@@ -85,33 +96,33 @@ Fixed Fixed::operator--()
     return tmp;
 }
 
-Fixed Fixed::operator * (Fixed rhs)
-{
-    Fixed tmp;
-    tmp.fixed_number = this->fixed_number * rhs.fixed_number;
-    return tmp;
-}
+// Fixed operator * (Fixed &lhs, Fixed &rhs)
+// {
+//     Fixed tmp;
+//     tmp.setRawBits(lhs.getRawBits() * rhs.getRawBits());
+//     return tmp;
+// }
 
-Fixed Fixed::operator + (Fixed rhs)
-{
-    Fixed tmp;
-    tmp.fixed_number = this->fixed_number + rhs.fixed_number;
-    return tmp;
-}
+// Fixed operator + (Fixed &lhs, Fixed &rhs)
+// {
+//     Fixed tmp;
+//     tmp.setRawBits(lhs.getRawBits() + rhs.getRawBits());
+//     return tmp;
+// }
 
-Fixed Fixed::operator - (Fixed rhs)
-{
-    Fixed tmp;
-    tmp.fixed_number = this->fixed_number - rhs.fixed_number;
-    return tmp;
-}
+// Fixed operator - (Fixed &lhs, Fixed &rhs)
+// {
+//     Fixed tmp;
+//     tmp.setRawBits(lhs.getRawBits() - rhs.getRawBits());
+//     return tmp;
+// }
 
-Fixed Fixed::operator / (Fixed rhs)
-{
-    Fixed tmp;
-    tmp.fixed_number = this->fixed_number / rhs.fixed_number;
-    return tmp;
-}
+// Fixed operator / (Fixed &lhs, Fixed &rhs)
+// {
+//     Fixed tmp;
+//     tmp.setRawBits(lhs.getRawBits() / rhs.getRawBits());
+//     return tmp;
+// }
 
 Fixed &Fixed::min(Fixed& ob1, Fixed& ob2)
 {
@@ -135,30 +146,30 @@ const Fixed &Fixed::max(const Fixed& ob1, const Fixed& ob2)
 
 bool operator > (Fixed &lhs, Fixed &rhs)
 {
-    return lhs.fixed_number > rhs.fixed_number ? true : false;
+    return lhs.fixed_number > rhs.fixed_number;
 }
 
 bool operator < (Fixed &lhs, Fixed &rhs)
 {
-    return lhs.fixed_number < rhs.fixed_number ? true : false;
+    return lhs.fixed_number < rhs.fixed_number;
 }
 
 bool operator >= (Fixed &lhs, Fixed &rhs)
 {
-    return lhs.fixed_number >= rhs.fixed_number ? true : false;
+    return lhs.fixed_number >= rhs.fixed_number;
 }
 
 bool operator <= (Fixed &lhs, Fixed &rhs)
 {
-    return lhs.fixed_number <= rhs.fixed_number ? true : false;
+    return lhs.fixed_number <= rhs.fixed_number;
 }
 
 bool operator == (Fixed &lhs, Fixed &rhs)
 {
-    return lhs.fixed_number == rhs.fixed_number ? true : false;
+    return lhs.fixed_number == rhs.fixed_number;
 }
 
 bool operator != (Fixed &lhs, Fixed &rhs)
 {
-    return lhs.fixed_number != rhs.fixed_number ? true : false;
+    return lhs.fixed_number != rhs.fixed_number;
 }
