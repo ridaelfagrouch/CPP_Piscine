@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 03:49:34 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/30 15:43:11 by rel-fagr         ###   ########.fr       */
+/*   Created: 2022/10/30 13:46:25 by rel-fagr          #+#    #+#             */
+/*   Updated: 2022/10/30 17:16:22 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,34 @@ class Fixed
 {
 private:
     int fixed_number;
-    static const int scale = 8; // 1/2^8 //1010 1001 0101 1001 1010 1110.1010 1011
+    static const int scale = 8;
 public:
     Fixed();
     Fixed(const int int_point);
     Fixed(const float float_point);
     ~Fixed();
     Fixed(const Fixed &other);
-    Fixed &operator = (const Fixed &rhs);
+    Fixed &operator=(const Fixed &rhs);
+    friend bool operator > (Fixed &lhs, Fixed &rhs); 
+    friend bool operator < (Fixed &lhs, Fixed &rhs); 
+    friend bool operator >= (Fixed &lhs, Fixed &rhs); 
+    friend bool operator <= (Fixed &lhs, Fixed &rhs); 
+    friend bool operator == (Fixed &lhs, Fixed &rhs); 
+    friend bool operator != (Fixed &lhs, Fixed &rhs); 
+    Fixed operator++(int);
+    Fixed operator++();
+    Fixed operator--(int);
+    Fixed operator--();
+    Fixed operator * (Fixed rhs);
+    Fixed operator + (Fixed rhs);
+    Fixed operator - (Fixed rhs);
+    Fixed operator / (Fixed rhs);
     float toFloat( void ) const;
     int toInt( void ) const;
+    static Fixed &min(Fixed& ob1, Fixed& ob2);
+    static const Fixed &min(const Fixed& ob1, const Fixed& ob2);
+    static Fixed &max(Fixed& ob1, Fixed& ob2);
+    static const Fixed &max(const Fixed& ob1, const Fixed& ob2);
 };
 
 std::ostream& operator<< (std::ostream& output, const Fixed & obj);
