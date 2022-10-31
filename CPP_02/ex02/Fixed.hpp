@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:46:25 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/30 19:18:54 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:33:37 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ public:
     int getRawBits(void) const;
     void    setRawBits(int const raw);
     Fixed &operator = (const Fixed &rhs);
-    // Fixed &operator * (Fixed &lhs, Fixed &rhs);
-    // Fixed &operator + (Fixed &lhs, Fixed &rhs);
-    // Fixed &operator - (Fixed &lhs, Fixed &rhs);
-    // Fixed &operator / (Fixed &lhs, Fixed &rhs);
-    friend bool operator > (Fixed &lhs, Fixed &rhs); 
-    friend bool operator < (Fixed &lhs, Fixed &rhs); 
-    friend bool operator >= (Fixed &lhs, Fixed &rhs); 
-    friend bool operator <= (Fixed &lhs, Fixed &rhs); 
-    friend bool operator == (Fixed &lhs, Fixed &rhs); 
-    friend bool operator != (Fixed &lhs, Fixed &rhs); 
+    Fixed operator * (const Fixed &obj);
+    Fixed operator + (const Fixed &obj);
+    Fixed operator - (const Fixed &obj);
+    Fixed operator / (const Fixed &obj);
+    // bool operator > (const Fixed &obj);
+    // bool operator < (const Fixed &obj);
+    // bool operator >= (const Fixed &obj);
+    // bool operator <= (const Fixed &obj);
+    // bool operator == (const Fixed &obj);
+    // bool operator != (const Fixed &obj);
     Fixed operator ++ (int);
     Fixed operator ++ ();
     Fixed operator -- (int);

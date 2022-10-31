@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:46:21 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/30 19:19:05 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:33:19 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,33 +96,29 @@ Fixed Fixed::operator--()
     return tmp;
 }
 
-// Fixed operator * (Fixed &lhs, Fixed &rhs)
-// {
-//     Fixed tmp;
-//     tmp.setRawBits(lhs.getRawBits() * rhs.getRawBits());
-//     return tmp;
-// }
+Fixed Fixed::operator * (const Fixed &obj)
+{
+    Fixed tmp(this->toFloat() * obj.toFloat());
+    return tmp;
+}
 
-// Fixed operator + (Fixed &lhs, Fixed &rhs)
-// {
-//     Fixed tmp;
-//     tmp.setRawBits(lhs.getRawBits() + rhs.getRawBits());
-//     return tmp;
-// }
+Fixed Fixed::operator + (const Fixed &obj)
+{
+    Fixed tmp(this->toFloat() + obj.toFloat());
+    return tmp;
+}
 
-// Fixed operator - (Fixed &lhs, Fixed &rhs)
-// {
-//     Fixed tmp;
-//     tmp.setRawBits(lhs.getRawBits() - rhs.getRawBits());
-//     return tmp;
-// }
+Fixed Fixed::operator - (const Fixed &obj)
+{
+    Fixed tmp(this->toFloat() - obj.toFloat());
+    return tmp;
+}
 
-// Fixed operator / (Fixed &lhs, Fixed &rhs)
-// {
-//     Fixed tmp;
-//     tmp.setRawBits(lhs.getRawBits() / rhs.getRawBits());
-//     return tmp;
-// }
+Fixed Fixed::operator / (const Fixed &obj)
+{
+    Fixed tmp(this->toFloat() / obj.toFloat());
+    return tmp;
+}
 
 Fixed &Fixed::min(Fixed& ob1, Fixed& ob2)
 {
@@ -144,32 +140,33 @@ const Fixed &Fixed::max(const Fixed& ob1, const Fixed& ob2)
     return ob1.fixed_number > ob2.fixed_number ? ob1 : ob2;
 }
 
-bool operator > (Fixed &lhs, Fixed &rhs)
-{
-    return lhs.fixed_number > rhs.fixed_number;
-}
+// bool operator > (Fixed &obj)
+// {
+//     Fixed tmp(this);
+//     return tmp.getRawBits() > obj.getRawBits();
+// }
 
-bool operator < (Fixed &lhs, Fixed &rhs)
-{
-    return lhs.fixed_number < rhs.fixed_number;
-}
+// bool operator < (Fixed &obj)
+// {
+//     return this.getRawBits() < obj.getRawBits();
+// }
 
-bool operator >= (Fixed &lhs, Fixed &rhs)
-{
-    return lhs.fixed_number >= rhs.fixed_number;
-}
+// bool operator >= (Fixed &obj)
+// {
+//     return this.getRawBits() >= obj.getRawBits();
+// }
 
-bool operator <= (Fixed &lhs, Fixed &rhs)
-{
-    return lhs.fixed_number <= rhs.fixed_number;
-}
+// bool operator <= (Fixed &obj)
+// {
+//     return this.getRawBits() <= obj.getRawBits();
+// }
 
-bool operator == (Fixed &lhs, Fixed &rhs)
-{
-    return lhs.fixed_number == rhs.fixed_number;
-}
+// bool operator == (Fixed &obj)
+// {
+//     return this.getRawBits() == obj.getRawBits();
+// }
 
-bool operator != (Fixed &lhs, Fixed &rhs)
-{
-    return lhs.fixed_number != rhs.fixed_number;
-}
+// bool operator != (Fixed &obj)
+// {
+//     return this.getRawBits() != obj.getRawBits();
+// }
