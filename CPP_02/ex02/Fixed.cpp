@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:46:21 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/31 11:33:19 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:48:40 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,33 +140,32 @@ const Fixed &Fixed::max(const Fixed& ob1, const Fixed& ob2)
     return ob1.fixed_number > ob2.fixed_number ? ob1 : ob2;
 }
 
-// bool operator > (Fixed &obj)
-// {
-//     Fixed tmp(this);
-//     return tmp.getRawBits() > obj.getRawBits();
-// }
+bool Fixed::operator > (const Fixed &obj)
+{
+    return fixed_number > obj.getRawBits();
+}
 
-// bool operator < (Fixed &obj)
-// {
-//     return this.getRawBits() < obj.getRawBits();
-// }
+bool Fixed::operator < (const Fixed &obj)
+{
+    return fixed_number < obj.getRawBits();
+}
 
-// bool operator >= (Fixed &obj)
-// {
-//     return this.getRawBits() >= obj.getRawBits();
-// }
+bool Fixed::operator >= (const Fixed &obj)
+{
+    return fixed_number >= obj.getRawBits();
+}
 
-// bool operator <= (Fixed &obj)
-// {
-//     return this.getRawBits() <= obj.getRawBits();
-// }
+bool Fixed::operator <= (const Fixed &obj)
+{
+    return fixed_number <= obj.getRawBits();
+}
 
-// bool operator == (Fixed &obj)
-// {
-//     return this.getRawBits() == obj.getRawBits();
-// }
+bool Fixed::operator == (const Fixed &obj)
+{
+    return fixed_number == obj.getRawBits();
+}
 
-// bool operator != (Fixed &obj)
-// {
-//     return this.getRawBits() != obj.getRawBits();
-// }
+bool Fixed::operator != (const Fixed &obj)
+{
+    return fixed_number != obj.getRawBits();
+}
