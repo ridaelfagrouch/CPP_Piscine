@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:46:25 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/31 11:49:17 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:34:10 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ public:
     bool operator == (const Fixed &obj);
     bool operator != (const Fixed &obj);
     Fixed operator ++ (int);
-    Fixed operator ++ ();
+    Fixed &operator ++ ();
     Fixed operator -- (int);
-    Fixed operator -- ();
+    Fixed &operator -- ();
     float toFloat( void ) const;
     int toInt( void ) const;
     static Fixed &min(Fixed& ob1, Fixed& ob2);

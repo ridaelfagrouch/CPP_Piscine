@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 13:46:21 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/10/31 11:48:40 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:34:26 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,30 +70,28 @@ std::ostream& operator<< (std::ostream& output, const Fixed & obj)
 
 Fixed Fixed::operator++(int)
 {
-    Fixed tmp;
-    tmp.fixed_number =  fixed_number++;
+    Fixed tmp(*this);
+    ++(*this);
     return tmp;
 }
 
-Fixed Fixed::operator++()
+Fixed &Fixed::operator++()
 {
-    Fixed tmp;
-    tmp.fixed_number = ++fixed_number;
-    return tmp;
+   ++fixed_number;
+    return *this;
 }
 
 Fixed Fixed::operator--(int)
 {
-    Fixed tmp;
-    tmp.fixed_number = fixed_number--;
+    Fixed tmp(*this);
+    --(*this);
     return tmp;
 }
 
-Fixed Fixed::operator--()
+Fixed &Fixed::operator--()
 {
-    Fixed tmp;
-    tmp.fixed_number = --fixed_number;
-    return tmp;
+    --fixed_number;
+    return *this;
 }
 
 Fixed Fixed::operator * (const Fixed &obj)
