@@ -6,48 +6,48 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:08:40 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/03 11:30:22 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/03 16:34:15 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point() : x(Fixed(0)), y(Fixed(0))
+Point::Point()
 {
+    this->x = Fixed(0);
+    this->y = Fixed(0);
 }
 
-Point::Point(const Point &src) : x(src.x), y(src.y)
+Point::Point(const Point &obj)
 {
+    this->x = obj.x;
+    this->y = obj.y;
 }
 
-Point::Point(const Fixed x, const Fixed y) : x(x), y(y)
+Point::Point(const Fixed x_, const Fixed y_)
 {
+    this->x = x_;
+    this->y = y_;
 }
 
-Point::~Point()
-{
-}
+Point::~Point(){}
 
-Point &Point::operator=(const Point &other) 
+Point &Point::operator=(const Point &rhs) 
 {
-    this->x = other.x;
-    this->y = other.y;
+    if (this != &rhs)
+    {
+        this->x = rhs.x;
+        this->y = rhs.y;     
+    }
     return *this;
 }
 
-Fixed Point::getX() const
+Fixed Point::get_x() const
 {
     return x;
 }
 
-Fixed Point::getY() const
+Fixed Point::get_y() const
 {
     return y;
-}
-
-std::string Point::toString() const
-{
-    std::string ret;
-    ret = "( " + std::to_string(x.toFloat()) + ", " + std::to_string(y.toFloat()) + " )";
-    return ret;
 }
