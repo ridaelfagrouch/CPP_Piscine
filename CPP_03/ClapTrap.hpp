@@ -22,7 +22,7 @@ private:
     int Energy = 10;
     int Damage = 0;
 public:
-    ClapTrap(std::string Name);
+    ClapTrap(std::string name);
     ~ClapTrap();
     ClapTrap(const ClapTrap &other);
     ClapTrap &operator=(const ClapTrap &rhs);
