@@ -6,22 +6,22 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:28:15 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/07 13:15:40 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:15:57 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name){
-   std::cout << "Default constructor called" << std::endl;
+   std::cout << "ClapTrap Default constructor called" << std::endl;
    this->Name = name;
-   this->Health = 10;
-   this->Energy = 10;
-   this->Damage =  0;
+   this->Health = 100;
+   this->Energy = 50;
+   this->Damage = 20;
 }
 
 ClapTrap::~ClapTrap(){
-   std::cout << "Destructor called" << std::endl;
+   std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other){
@@ -59,7 +59,19 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->Energy <= 0 || this->Health <= 0)
 		return ;
    this->Health += amount;
+   this->Damage += amount;
 	this->Energy--;
-	std::cout << "clapTrap " << this->Name << " repaired with this amount " << amount << std::endl;
+	std::cout << this->Name << " repaired with this amount " << amount << std::endl;
 }
 
+void ClapTrap::getHealth(){
+   std::cout << this->Name << "'s Health : " << Health << std::endl;
+}
+
+void ClapTrap::getEnergy(){
+   std::cout << this->Name << "'s Energy " << Energy << std::endl;
+}
+
+void ClapTrap::getDamage(){
+   std::cout << this->Name << "'s Damage : " << Damage << std::endl;
+}

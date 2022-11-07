@@ -6,14 +6,14 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:28:15 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/07 13:43:53 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:47:37 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name){
-   std::cout << "Default constructor called" << std::endl;
+   std::cout << "ClapTrap Default constructor called" << std::endl;
    this->Name = name;
    this->Health = 10;
    this->Energy = 10;
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(std::string name){
 }
 
 ClapTrap::~ClapTrap(){
-   std::cout << "Destructor called" << std::endl;
+   std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other){
