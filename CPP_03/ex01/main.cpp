@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "scavTrap.hpp"
 
 int main()
 {
-    ClapTrap test1("rid");
+    scavTrap test1("rid");
     
     test1.getHealth();
     test1.getEnergy();

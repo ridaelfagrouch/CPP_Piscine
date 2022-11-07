@@ -17,15 +17,11 @@
 
 class scavTrap : public ClapTrap
 {
-private:
-    std::string Name;
-    int Health;
-    int Energy;
-    int Damage;
 public:
     scavTrap(std::string name);
     ~scavTrap();
     scavTrap(const scavTrap &other);
     scavTrap &operator=(const scavTrap &rhs);
     void guardGate();
+    void attack(const std::string& target);
 };

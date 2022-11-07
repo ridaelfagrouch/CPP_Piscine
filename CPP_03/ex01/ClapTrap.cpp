@@ -15,9 +15,9 @@
 ClapTrap::ClapTrap(std::string name){
    std::cout << "ClapTrap Default constructor called" << std::endl;
    this->Name = name;
-   this->Health = 100;
-   this->Energy = 50;
-   this->Damage = 20;
+   this->Health = 10;
+   this->Energy = 10;
+   this->Damage =  0;
 }
 
 ClapTrap::~ClapTrap(){
@@ -59,19 +59,18 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->Energy <= 0 || this->Health <= 0)
 		return ;
    this->Health += amount;
-   this->Damage += amount;
 	this->Energy--;
-	std::cout << this->Name << " repaired with this amount " << amount << std::endl;
+	std::cout << "clapTrap " << this->Name << " repaired with this amount " << amount << std::endl;
 }
 
 void ClapTrap::getHealth(){
-   std::cout << this->Name << "'s Health : " << Health << std::endl;
+   std::cout << "clapTrap " << this->Name << "'s Health : " << Health << std::endl;
 }
 
 void ClapTrap::getEnergy(){
-   std::cout << this->Name << "'s Energy " << Energy << std::endl;
+   std::cout << "clapTrap " << this->Name << "'s Energy " << Energy << std::endl;
 }
 
 void ClapTrap::getDamage(){
-   std::cout << this->Name << "'s Damage : " << Damage << std::endl;
+   std::cout << "clapTrap " << this->Name << "'s Damage : " << Damage << std::endl;
 }

@@ -17,7 +17,7 @@ CXX = c++
 HEADER = ClapTrap.hpp
 HEADER1 = scavTrap.hpp
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
-NAME = Serena,_my_love!
+NAME = Serena_my_love
 
 all : ${OFILES} 
 	@${CXX} ${CXXFLAGS} ${CFILES} -o ${NAME}

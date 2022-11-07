@@ -11,15 +11,42 @@
 /* ************************************************************************** */
 
 #include "scavTrap.hpp"
-#include <stdio.h>
 
-int length_(int c[])
-{
-    return (int)(sizeof(c[])/ sizeof(c[0]));
+scavTrap::scavTrap(std::string name) : ClapTrap(name){
+   std::cout << "scavTrap Default constructor called" << std::endl;
+   this->Health = 100;
+   this->Energy = 50;
+   this->Damage =  20;
 }
 
-int main()
+scavTrap::~scavTrap(){
+   std::cout << "scavTrap Destructor called" << std::endl;
+}
+
+scavTrap::scavTrap(const scavTrap &other):ClapTrap(other.Name){
+   *this = other;
+}
+
+scavTrap &scavTrap::operator=(const scavTrap &rhs){
+   if (this != &rhs)
+   {
+      this->Name = rhs.Name;
+      this->Health = rhs.Health;
+      this->Energy = rhs.Energy;
+      this->Damage = rhs.Damage;
+   }
+   return *this;
+}
+
+void	scavTrap::attack(const std::string& target)
 {
-    int c[] = {4, 5, 55, 77};
-    printf("%d\n", length_(c));
+	if (this->Energy > 0 || this->Health > 0)
+      this->Energy--;
+   std::cout << "scavTrap " << Name << " attacks " << target << " causing " \
+      << Damage << " point of damage!" << std::endl;
+}
+
+void    scavTrap::guardGate()
+{
+    std::cout << "scavTrapp " << this->Name << " is now in Gate keeper mmode" << std::endl;
 }

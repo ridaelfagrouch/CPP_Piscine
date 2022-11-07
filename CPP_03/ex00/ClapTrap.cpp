@@ -59,7 +59,6 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->Energy <= 0 || this->Health <= 0)
 		return ;
    this->Health += amount;
-   this->Damage += amount;
 	this->Energy--;
 	std::cout << "clapTrap " << this->Name << " repaired with this amount " << amount << std::endl;
 }
