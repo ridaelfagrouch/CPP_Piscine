@@ -6,15 +6,15 @@
 /*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:28:21 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/07 19:28:37 by garra            ###   ########.fr       */
+/*   Updated: 2022/11/07 19:16:49 by garra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    ScavTrap test("rid");
+    FragTrap test("rid");
     
     test.getHealth();
     test.getEnergy();
@@ -39,5 +39,5 @@ int main()
     test.getHealth();
     test.getEnergy();
     test.getDamage();
-    test.guardGate();
+    test.highFivesGuys();
 }
