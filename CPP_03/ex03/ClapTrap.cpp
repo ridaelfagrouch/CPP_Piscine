@@ -6,14 +6,13 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:28:15 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/10 15:05:58 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/10 15:06:20 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
-{
+ClapTrap::ClapTrap(){
    std::cout << "ClapTrap Default constructor called" << std::endl;
    this->Name = "no_name";
    this->Health = 10;
@@ -21,8 +20,7 @@ ClapTrap::ClapTrap()
    this->Damage =  0;
 }
 
-ClapTrap::ClapTrap(std::string name)
-{
+ClapTrap::ClapTrap(std::string name){
    std::cout << "ClapTrap constructors with parameters called" << std::endl;
    this->Name = name;
    this->Health = 10;
@@ -30,18 +28,15 @@ ClapTrap::ClapTrap(std::string name)
    this->Damage =  0;
 }
 
-ClapTrap::~ClapTrap()
-{
+ClapTrap::~ClapTrap(){
    std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &other)
-{
+ClapTrap::ClapTrap(const ClapTrap &other){
    *this = other;
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
-{
+ClapTrap &ClapTrap::operator=(const ClapTrap &rhs){
    if (this != &rhs)
    {
       this->Name = rhs.Name;

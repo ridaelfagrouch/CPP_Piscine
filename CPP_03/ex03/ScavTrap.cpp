@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:01:06 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/10 13:42:09 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/10 15:54:51 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ ScavTrap::~ScavTrap(){
    std::cout << "ScavTrap Destructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other){
+ScavTrap::ScavTrap(const ScavTrap &other)
+{
    *this = other;
 }
 
@@ -59,5 +60,5 @@ void	ScavTrap::attack(const std::string& target)
 
 void    ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap " << this->Name << " is now in Gate keeper mode" << std::endl;
+    std::cout << "ScavTrap " << this->Name << " is now in Gate keeper mmode" << std::endl;
 }

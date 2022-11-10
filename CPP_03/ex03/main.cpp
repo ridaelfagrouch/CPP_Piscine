@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:10:40 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/10 13:47:20 by rel-fagr         ###   ########.fr       */
+/*   Created: 2022/11/05 11:28:21 by rel-fagr          #+#    #+#             */
+/*   Updated: 2022/11/10 15:57:07 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "DiamondTrap.hpp"
 
-#include <iostream>
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
+int main()
 {
-public:
-    ScavTrap();
-    ScavTrap(std::string name);
-    ~ScavTrap();
-    ScavTrap(const ScavTrap &other);
-    ScavTrap &operator=(const ScavTrap &rhs);
-    void guardGate();
-    void attack(const std::string& target);
-};
+    DiamondTrap test("rid");
+    
+    test.getHealth();
+    test.getEnergy();
+    test.getDamage();
+    test.attack("ankel");
+    test.getHealth();
+    test.getEnergy();
+    test.getDamage();
+    test.whoAmi();
+}

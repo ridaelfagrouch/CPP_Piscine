@@ -6,14 +6,22 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 11:28:15 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/07 14:47:37 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/10 15:05:42 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include  "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name){
+ClapTrap::ClapTrap(){
    std::cout << "ClapTrap Default constructor called" << std::endl;
+   this->Name = "no_name";
+   this->Health = 10;
+   this->Energy = 10;
+   this->Damage =  0;
+}
+
+ClapTrap::ClapTrap(std::string name){
+   std::cout << "ClapTrap constructors with parameters called" << std::endl;
    this->Name = name;
    this->Health = 10;
    this->Energy = 10;
@@ -63,14 +71,20 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "clapTrap " << this->Name << " repaired with this amount " << amount << std::endl;
 }
 
-void ClapTrap::getHealth(){
-   std::cout << "clapTrap " << this->Name << "'s Health : " << Health << std::endl;
+void ClapTrap::getHealth()
+{
+   if (this->Health > 0)
+      std::cout << this->Name << "'s Health : " << Health << std::endl;
 }
 
-void ClapTrap::getEnergy(){
-   std::cout << "clapTrap " << this->Name << "'s Energy " << Energy << std::endl;
+void ClapTrap::getEnergy()
+{
+   if (this->Health > 0)
+      std::cout << this->Name << "'s Energy " << Energy << std::endl;
 }
 
-void ClapTrap::getDamage(){
-   std::cout << "clapTrap " << this->Name << "'s Damage : " << Damage << std::endl;
+void ClapTrap::getDamage()
+{
+   if (this->Health > 0)
+      std::cout << this->Name << "'s Damage : " << Damage << std::endl;
 }

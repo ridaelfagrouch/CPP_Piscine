@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   scavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:10:40 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/10 13:47:20 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:05:54 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 public:
     ScavTrap();
@@ -24,5 +24,5 @@ public:
     ScavTrap(const ScavTrap &other);
     ScavTrap &operator=(const ScavTrap &rhs);
     void guardGate();
-    void attack(const std::string& target);
+    virtual void attack(const std::string& target);
 };

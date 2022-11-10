@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:10:40 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/10 13:47:20 by rel-fagr         ###   ########.fr       */
+/*   Created: 2022/11/09 12:27:42 by rel-fagr          #+#    #+#             */
+/*   Updated: 2022/11/10 16:06:06 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
+private:
+    std::string Name;
 public:
-    ScavTrap();
-    ScavTrap(std::string name);
-    ~ScavTrap();
-    ScavTrap(const ScavTrap &other);
-    ScavTrap &operator=(const ScavTrap &rhs);
-    void guardGate();
+    DiamondTrap();
+    DiamondTrap(std::string name);
+    ~DiamondTrap();
+    DiamondTrap(const DiamondTrap &other);
+    DiamondTrap &operator=(const DiamondTrap &rhs);
     void attack(const std::string& target);
+    void whoAmi();
+    void getHealth();
+    void getEnergy();
+    void getDamage();
 };

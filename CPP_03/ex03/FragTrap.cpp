@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:03:10 by garra             #+#    #+#             */
-/*   Updated: 2022/11/10 15:39:24 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/10 15:39:06 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ FragTrap &FragTrap::operator=(const FragTrap &rhs){
 
 void    FragTrap::highFivesGuys(void)
 {
-   std::cout << "🙏" << std::endl;
+    std::cout << "🙏" << std::endl;
 }
