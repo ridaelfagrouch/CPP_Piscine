@@ -3,27 +3,29 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
+#    By: garra <garra@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 14:16:20 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/11/11 14:21:19 by rel-fagr         ###   ########.fr        #
+#    Updated: 2022/11/11 18:09:52 by garra            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFILES = 
+CFILES = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OFILES = ${CFILES:.cpp=.opp}
 
 CXX = c++
 HEADER = Animal.hpp
-HEADER1 = Cta.hpp 
+HEADER1 = Cat.hpp
 HEADER2 = Dog.hpp
+HEADER3 = WrongAnimal.hpp
+HEADER4 = WrongCat.hpp
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = Polymorphism
 
 all : ${OFILES}
 	@${CXX} ${CXXFLAGS} ${CFILES} -o ${NAME}
 
-%.opp:%.cpp ${HEADER} ${HEADER1} ${HEADER2}
+%.opp:%.cpp ${HEADER} ${HEADER1} ${HEADER2} ${HEADER3} ${HEADER4}
 	@${CXX} ${CXXFLAGS} -o $@ -c $<
 
 clean:
