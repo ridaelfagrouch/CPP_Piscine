@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 14:16:14 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/12 11:14:41 by garra            ###   ########.fr       */
+/*   Created: 2022/11/12 10:52:11 by garra             #+#    #+#             */
+/*   Updated: 2022/11/12 10:55:13 by garra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include  "Brain.hpp"
 
-#include <iostream>
-
-class Animal
+Brain::Brain()
 {
-protected:
-    std::string type;
-public:
-    Animal();
-    Animal(std::string);
-    virtual ~Animal();
-    Animal(const Animal &other);
-    Animal &operator=(const Animal &rhs);
-    virtual void makeSound() const;
-    std::string getType() const;
-};
+   std::cout << "Brain Default constructor called" << std::endl;
+}
+Brain::~Brain(){
+   std::cout << "Brain Destructor called" << std::endl;
+}
+
+Brain::Brain(const Brain &other)
+{
+   *this = other;
+}
+
+Brain &Brain::operator=(const Brain &rhs){
+   if (this != &rhs)
+      *this = rhs;
+   return *this;
+}

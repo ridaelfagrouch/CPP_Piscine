@@ -6,7 +6,7 @@
 #    By: garra <garra@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 14:16:20 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/11/11 18:09:52 by garra            ###   ########.fr        #
+#    Updated: 2022/11/12 10:49:07 by garra            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ HEADER2 = Dog.hpp
 HEADER3 = WrongAnimal.hpp
 HEADER4 = WrongCat.hpp
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
-NAME = Polymorphism
+NAME = I_don_t_want_to_set_the_world_on_fire
 
 all : ${OFILES}
 	@${CXX} ${CXXFLAGS} ${CFILES} -o ${NAME}
