@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 10:52:11 by garra             #+#    #+#             */
-/*   Updated: 2022/11/12 10:55:13 by garra            ###   ########.fr       */
+/*   Updated: 2022/11/13 10:34:13 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ Brain::~Brain(){
 
 Brain::Brain(const Brain &other)
 {
-   *this = other;
+   for (int i = 0; i < 100; i++)
+      this->ideas[i] = other.ideas[i];
 }
 
 Brain &Brain::operator=(const Brain &rhs){
    if (this != &rhs)
-      *this = rhs;
+      for (int i = 0; i < 100; i++)
+         this->ideas[i] = rhs.ideas[i];
    return *this;
 }
