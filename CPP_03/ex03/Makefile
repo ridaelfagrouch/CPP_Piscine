@@ -6,7 +6,7 @@
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 11:28:24 by rel-fagr          #+#    #+#              #
-#    Updated: 2022/11/09 17:09:26 by rel-fagr         ###   ########.fr        #
+#    Updated: 2022/11/11 15:07:22 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ HEADER3 = DiamondTrap.hpp
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = Now_it_s_weird!
 
-all : ${OFILES}
+all : ${OFILES} 
 	@${CXX} ${CXXFLAGS} ${CFILES} -o ${NAME}
 
 %.opp:%.cpp ${HEADER} ${HEADER1} ${HEADER2} ${HEADER3}
