@@ -6,7 +6,7 @@
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 23:07:55 by garra             #+#    #+#              #
-#    Updated: 2022/11/15 16:17:32 by rel-fagr         ###   ########.fr        #
+#    Updated: 2022/11/15 18:58:38 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ HEADER2 = ShrubberyCreationForm.hpp
 HEADER3 = RobotomyRequestForm.hpp
 HEADER4 = PresidentialPardonForm.hpp
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
-NAME = Form_up_maggots
+NAME = No_you_need_form_28B_not_28C...
 
 all : ${OFILES}
 	@${CXX} ${CXXFLAGS} ${CFILES} -o ${NAME}
