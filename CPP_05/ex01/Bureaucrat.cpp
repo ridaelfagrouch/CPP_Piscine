@@ -6,11 +6,12 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 22:41:34 by garra             #+#    #+#             */
-/*   Updated: 2022/11/14 11:38:50 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:32:32 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : Name(name)
 {
@@ -79,12 +80,15 @@ std::ostream& operator<< (std::ostream& out, Bureaucrat &bureaucrat)
 	return out;
 }
 
-const char* GradeTooHighException::what() const throw()
+void	Bureaucrat::signForm(Form &form)
 {
-	return "your grade is too High";
-}
-
-const char* GradeTooLowException::what() const throw()
-{
-	return "your grade is too Low";
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	catch(std::exception& e)
+    {
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
 }

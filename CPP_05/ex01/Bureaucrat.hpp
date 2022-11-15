@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 22:33:51 by garra             #+#    #+#             */
-/*   Updated: 2022/11/14 11:11:05 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:55:59 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,7 @@
 #include <iostream>
 #include <exception>
 
-class GradeTooHighException : public std::exception
-{
-    public:
-	    virtual const char* what() const throw();
-};
-
-class GradeTooLowException : public std::exception
-{
-    public:
-	    virtual const char* what() const throw();
-};
+class Form;
 
 
 class Bureaucrat
@@ -41,11 +31,28 @@ class Bureaucrat
         Bureaucrat    &operator=(const Bureaucrat &rhs);
         std::string    getName(void);
         int     getGrade(void);
-        GradeTooHighException	gradeTooHighException;
-        GradeTooLowException    gradeTooLowException;
         void    incrementGrade(void);
         void    decrementGrade(void);
+        void	signForm(Form &form);
+        class GradeTooHighException : public std::exception
+        {
+            public:
+        	    virtual const char* what() const throw(){
+                    return ("grade too High");
+                }
+        };
+        
+        class GradeTooLowException : public std::exception
+        {
+            public:
+        	    virtual const char* what() const throw(){
+                    return ("grade too Low");
+                }
+        };
+        GradeTooHighException	gradeTooHighException;
+        GradeTooLowException    gradeTooLowException;
 };
+
 
 
 std::ostream& operator<< (std::ostream& out, Bureaucrat &bureaucrat);
