@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 20:31:16 by garra             #+#    #+#             */
-/*   Updated: 2022/11/15 18:53:46 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/16 00:22:52 by garra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ public:
     Form    &operator=(const Form &rhs);
     std::string getName();
     int getGradeSign();
-    int getGradeExec();
+    int getGradeExec() const;
     bool	getSign();
     void	beSigned(Bureaucrat &bureaucrat);
-    const void execute(Bureaucrat const & executor);
+    virtual void execute(Bureaucrat const & executor) const = 0;
     GradeTooHighException	gradeTooHighException_;
     GradeTooLowException    gradeTooLowException_;
 };

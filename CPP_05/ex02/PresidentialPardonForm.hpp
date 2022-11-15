@@ -3,26 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:17:52 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/15 18:43:32 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/16 00:17:05 by garra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "Form.hpp"
+class Bureaucrat;
 
-class PresidentialPardonForm
+class PresidentialPardonForm : public Form
 {
 private:
-    int GradeSign;
-    int GradeExec;
+    std::string Target;
 public:
     PresidentialPardonForm();
-    PresidentialPardonForm(std::string target);
+    PresidentialPardonForm(std::string const &target);
     ~PresidentialPardonForm();
     PresidentialPardonForm(const PresidentialPardonForm &other);
     PresidentialPardonForm &operator=(const PresidentialPardonForm &rhs);
+    void execute(Bureaucrat const & executor) const;
 };

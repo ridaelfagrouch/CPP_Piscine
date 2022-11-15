@@ -3,26 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:18:03 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/15 18:44:12 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/16 00:19:45 by garra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "Form.hpp"
 
-class ShrubberyCreationForm
+class Bureaucrat;
+
+class ShrubberyCreationForm : public Form
 {
 private:
-    int GradeSign;
-    int GradeExec;
+    std::string Target;
 public:
     ShrubberyCreationForm();
     ShrubberyCreationForm(std::string target);
     ~ShrubberyCreationForm();
     ShrubberyCreationForm(const ShrubberyCreationForm &other);
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &rhs);
+    void execute(Bureaucrat const & executor) const;
 };
