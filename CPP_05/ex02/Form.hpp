@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 20:31:16 by garra             #+#    #+#             */
-/*   Updated: 2022/11/16 00:22:52 by garra            ###   ########.fr       */
+/*   Updated: 2022/11/16 11:57:38 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,6 @@
 
 
 class Bureaucrat;
-
-class GradeTooHighException : public std::exception
-{
-    public:
-	    virtual const char* what() const throw(){
-            return ("grade too High");
-        }
-};
-
-class GradeTooLowException : public std::exception
-{
-    public:
-	    virtual const char* what() const throw(){
-            return ("grade too Low");
-        }
-};
 
 class Form
 {
@@ -50,11 +34,37 @@ public:
     std::string getName();
     int getGradeSign();
     int getGradeExec() const;
-    bool	getSign();
+    bool	getSign() const;
     void	beSigned(Bureaucrat &bureaucrat);
     virtual void execute(Bureaucrat const & executor) const = 0;
+
+    class GradeTooHighException : public std::exception
+    {
+        public:
+    	    virtual const char* what() const throw(){
+                return ("grade too High");
+            }
+    };
+    
+    class GradeTooLowException : public std::exception
+    {
+        public:
+    	    virtual const char* what() const throw(){
+                return ("grade too Low");
+            }
+    };
+    
+    class GradeTooCheckFormSigned : public std::exception
+    {
+        public:
+    	    virtual const char* what() const throw(){
+                return ("Form is not signed");
+            }
+    };
+    
     GradeTooHighException	gradeTooHighException_;
     GradeTooLowException    gradeTooLowException_;
+    GradeTooCheckFormSigned gradeTooCheckFormSigned;
 };
 
 std::ostream& operator<< (std::ostream& out, Form &form);

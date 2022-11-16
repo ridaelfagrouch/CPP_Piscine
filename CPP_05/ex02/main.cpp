@@ -6,26 +6,26 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:07:25 by garra             #+#    #+#             */
-/*   Updated: 2022/11/15 15:04:23 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/16 12:12:53 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include  "RobotomyRequestForm.hpp"
+#include  "ShrubberyCreationForm.hpp"
+#include  "PresidentialPardonForm.hpp"
 
 int main()
 {
     try
     {
-        Bureaucrat rid("rida", 99);
-        // Bureaucrat rid("rida", 150);
-        // Bureaucrat rid("rida", 0);
-        Form dada("form_name", 100, 120);
-        rid.incrementGrade();
-        dada.beSigned(rid);
-        rid.signForm(dada);
-        std::cout << rid << std::endl;
-        std::cout << dada << std::endl;
+        Bureaucrat rid("rida", 4);
+        // PresidentialPardonForm Presiden("trump");
+        ShrubberyCreationForm Shrubbery("trump");
+        // RobotomyRequestForm Robotomy("trump");
+        // Presiden.execute(rid);
+        Shrubbery.beSigned(rid);
+        Shrubbery.execute(rid);
     }
     catch(std::exception& e)
     {

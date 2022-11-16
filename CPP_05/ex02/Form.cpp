@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 20:31:19 by garra             #+#    #+#             */
-/*   Updated: 2022/11/15 14:43:46 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/16 11:57:30 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ std::string Form::getName()
     return (this->Name);
 }
 
-bool		Form::getSign()
+bool		Form::getSign() const
 {
     return (this->Sign);
 }
@@ -66,7 +66,7 @@ int	Form::getGradeSign()
     return(this->GradeSign);
 }
 
-int	Form::getGradeExec()
+int	Form::getGradeExec() const
 {
     return(this->GradeExec);
 }

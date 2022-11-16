@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 22:33:51 by garra             #+#    #+#             */
-/*   Updated: 2022/11/16 00:24:25 by garra            ###   ########.fr       */
+/*   Updated: 2022/11/16 11:46:58 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,6 @@
 #include <exception>
 
 class Form;
-
-class GradeTooHighException : public std::exception
-{
-    public:
-	    virtual const char* what() const throw(){
-            return ("grade too High");
-        }
-};
-
-class GradeTooLowException : public std::exception
-{
-    public:
-	    virtual const char* what() const throw(){
-            return ("grade too Low");
-        }
-};
 
 
 class Bureaucrat
@@ -51,6 +35,23 @@ class Bureaucrat
         void    decrementGrade(void);
         void	signForm(Form &form);
         void executeForm(Form const & form);
+
+        class GradeTooHighException : public std::exception
+        {
+            public:
+        	    virtual const char* what() const throw(){
+                    return ("grade too High");
+                }
+        };
+        
+        class GradeTooLowException : public std::exception
+        {
+            public:
+        	    virtual const char* what() const throw(){
+                    return ("grade too Low");
+                }
+        };
+
         GradeTooHighException	gradeTooHighException;
         GradeTooLowException    gradeTooLowException;
 };

@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 22:41:34 by garra             #+#    #+#             */
-/*   Updated: 2022/11/15 14:32:32 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/16 11:48:25 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ std::string    Bureaucrat::getName(void)
     return (this->Name);
 }
 
-int     Bureaucrat::getGrade(void)
+int     Bureaucrat::getGrade(void) const
 {
     return (this->Grade);
 }
