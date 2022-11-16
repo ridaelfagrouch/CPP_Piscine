@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:07:25 by garra             #+#    #+#             */
-/*   Updated: 2022/11/16 12:12:53 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:17:57 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,14 @@ int main()
     {
         Bureaucrat rid("rida", 4);
         // PresidentialPardonForm Presiden("trump");
-        ShrubberyCreationForm Shrubbery("trump");
-        // RobotomyRequestForm Robotomy("trump");
+        // ShrubberyCreationForm Shrubbery("trump");
+        RobotomyRequestForm Robotomy("trump");
+        // Presiden.beSigned(rid);
         // Presiden.execute(rid);
-        Shrubbery.beSigned(rid);
-        Shrubbery.execute(rid);
+        // Shrubbery.beSigned(rid);
+        // Shrubbery.execute(rid);
+        Robotomy.beSigned(rid);
+        Robotomy.execute(rid);
     }
     catch(std::exception& e)
     {
