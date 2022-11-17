@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:07:25 by garra             #+#    #+#             */
-/*   Updated: 2022/11/14 11:46:30 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:26:12 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
         rid.incrementGrade();
         std::cout << rid << std::endl;
 
-        Bureaucrat ahmed("ahmed", 0);
+        Bureaucrat ahmed("ahmed", 2);
         ahmed.decrementGrade();
         std::cout << ahmed << std::endl;
 

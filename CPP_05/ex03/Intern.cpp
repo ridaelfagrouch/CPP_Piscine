@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 01:24:35 by garra             #+#    #+#             */
-/*   Updated: 2022/11/17 15:07:20 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:05:26 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,18 @@ Form *Intern::makeForm(std::string name, std::string target)
 	{
 	case 0:
 		form = new ShrubberyCreationForm(target);
-		std::cout << "Intern creates: ShrubberyCreationForm\n";
+		std::cout << "Intern creates ShrubberyCreationForm\n";
 		break;
 	case 1:
 		form = new RobotomyRequestForm(target);
-		std::cout << "Intern creates: RobotomyRequestForm\n";
+		std::cout << "Intern creates RobotomyRequestForm\n";
 		break;
 	case 2:
 		form = new PresidentialPardonForm(target);
-		std::cout << "Intern creates: PresidentialPardonForm\n";
+		std::cout << "Intern creates PresidentialPardonForm\n";
 		break;
 	default:
-		std::cout << "Intern creates: nothing!\n";
+		std::cout << "Intern creates nothing!\n";
 		break;
 	}
 	return (form);
