@@ -6,29 +6,28 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:07:25 by garra             #+#    #+#             */
-/*   Updated: 2022/11/16 13:17:57 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:11:17 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include  "RobotomyRequestForm.hpp"
-#include  "ShrubberyCreationForm.hpp"
-#include  "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
     try
     {
+        Intern Create_form;
         Bureaucrat rid("rida", 4);
-        // PresidentialPardonForm Presiden("trump");
-        // ShrubberyCreationForm Shrubbery("trump");
-        RobotomyRequestForm Robotomy("trump");
-        // Presiden.beSigned(rid);
-        // Presiden.execute(rid);
-        // Shrubbery.beSigned(rid);
-        // Shrubbery.execute(rid);
-        Robotomy.beSigned(rid);
-        Robotomy.execute(rid);
+        Form *form = Create_form.makeForm("PresidentialPardonForm", "trump");
+        // Form *form = Create_form.makeForm("RobotomyRequestForm", "trump");
+        // Form *form = Create_form.makeForm("ShrubberyCreationForm", "trump");
+        if (form != NULL)
+        {
+            form->beSigned(rid);
+            form->execute(rid);
+        }
+        delete form;
     }
     catch(std::exception& e)
     {

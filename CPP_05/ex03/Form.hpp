@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 20:31:16 by garra             #+#    #+#             */
-/*   Updated: 2022/11/16 15:23:30 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:15:19 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ private:
 public:
     Form();
     Form(std::string name, int gradeSign, int gradeExec);
-    ~Form();
+    virtual ~Form();
     Form(const Form &other);
     Form    &operator=(const Form &rhs);
     std::string getName();

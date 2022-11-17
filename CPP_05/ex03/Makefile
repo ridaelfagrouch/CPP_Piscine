@@ -6,13 +6,13 @@
 #    By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/13 23:07:55 by garra             #+#    #+#              #
-#    Updated: 2022/11/16 15:15:18 by rel-fagr         ###   ########.fr        #
+#    Updated: 2022/11/17 15:12:56 by rel-fagr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFILES = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp \
-		RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp Intern.hpp
-
+		RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+		
 OFILES = ${CFILES:.cpp=.opp}
 
 CXX = c++
@@ -21,13 +21,14 @@ HEADER1 = Form.hpp
 HEADER2 = ShrubberyCreationForm.hpp
 HEADER3 = RobotomyRequestForm.hpp
 HEADER4 = PresidentialPardonForm.hpp
+HEADER5 = Intern.hpp
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = At_least_this_beats_coffee-making
 
 all : ${OFILES}
 	@${CXX} ${CXXFLAGS} ${CFILES} -o ${NAME}
 
-%.opp:%.cpp ${HEADER} ${HEADER1} ${HEADER2} ${HEADER3} ${HEADER4}
+%.opp:%.cpp ${HEADER} ${HEADER1} ${HEADER2} ${HEADER3} ${HEADER4} ${HEADER5}
 	@${CXX} ${CXXFLAGS} -o $@ -c $<
 
 clean:

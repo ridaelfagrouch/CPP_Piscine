@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 01:24:35 by garra             #+#    #+#             */
-/*   Updated: 2022/11/17 15:07:20 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/17 01:42:27 by garra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ Intern &Intern::operator=(Intern const & rhs)
 
 Intern::~Intern(void){}
 
-Form *Intern::makeForm(std::string name, std::string target)
+Form *Intern::makeForm(std::string & name, std::string & target) const
 {
     int	form_id = -1;
 	Form * form = NULL;
-	std::string forms[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	std::string forms[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
 	for (int i = 0; i < 3; i++)
 	{
