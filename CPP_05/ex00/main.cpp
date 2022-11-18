@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:07:25 by garra             #+#    #+#             */
-/*   Updated: 2022/11/17 16:26:12 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:16:39 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     try
     {
-        Bureaucrat rid("rida", 140);
+        Bureaucrat rid("rida", 149);
         rid.incrementGrade();
         std::cout << rid << std::endl;
 
