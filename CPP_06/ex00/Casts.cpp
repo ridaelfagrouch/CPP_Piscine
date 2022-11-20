@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:42:39 by garra             #+#    #+#             */
-/*   Updated: 2022/11/20 18:50:28 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/20 18:57:22 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,14 @@ void Casts::detectType(char *argv)
         char *end;
         this->setValue(strtod(argv, &end));
     }
+}
+
+void Casts::convertall()
+{
+    this->castChar();
+    this->castInt();
+    this->castFloat();
+    this->castDouble();
 }
 
 void    Casts::castChar(void)
