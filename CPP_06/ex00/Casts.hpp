@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Casts.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:42:42 by garra             #+#    #+#             */
-/*   Updated: 2022/11/20 21:45:04 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/21 00:31:12 by garra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Casts {
         ~Casts();
         Casts(char *argv);
         Casts( Casts &obj);
-        Casts& operator=( Casts &obj);
+        Casts& operator=(const Casts &obj);
         int getType(void);
         std::string& getInput(void);
         double getValue(void);

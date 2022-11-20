@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Casts.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:42:39 by garra             #+#    #+#             */
-/*   Updated: 2022/11/20 21:56:21 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/21 00:31:57 by garra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@ Casts::Casts(char *argv)
 
 Casts::Casts( Casts &obj)
 {
-    input = obj.input;
     *this = obj;
     return ;
 }
 
-Casts& Casts::operator=( Casts &obj)
+Casts& Casts::operator=(const Casts &obj)
 {
     if (this != &obj)
     {
