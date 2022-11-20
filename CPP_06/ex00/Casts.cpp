@@ -6,12 +6,11 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:42:39 by garra             #+#    #+#             */
-/*   Updated: 2022/11/20 18:57:22 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/20 21:56:21 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Casts.hpp"
-
 
 Casts::Casts()
 {
@@ -40,14 +39,26 @@ Casts& Casts::operator=( Casts &obj)
     if (this != &obj)
     {
         type = obj.type;
-        value = obj.value;
+        data = obj.data;
     }
     return (*this);
 }
 
+bool Casts::isNumber(std::string str)
+{
+	char c;
+    for (int i = 0; i < (int)str.length() ; i++) {
+		c = str[i];
+        if (c == '.')
+            continue ;
+        if (std::isdigit(c) == 0) return false;
+    }
+    return true;
+}
+
 void Casts::detectType(char *argv)
 {
-    std::string str = static_cast<std::string>(argv);
+    this->str = static_cast<std::string>(argv);
     if (input.length() == 1)
     {
         char c = input[0];
@@ -63,6 +74,10 @@ void Casts::detectType(char *argv)
     {
         char *end;
         this->setValue(strtod(argv, &end));
+        std::string error = "error: invalid input";
+        double check = getValue();
+        if (check > INT_MAX || check < INT_MIN)
+            throw error;
     }
 }
 
@@ -76,20 +91,22 @@ void Casts::convertall()
 
 void    Casts::castChar(void)
 {
-    if (type > 0 || value < 0 || value > 126)
+    if (type > 0 || data < 0 || data > 126)
         std::cout << "Char: Impossible" << std::endl;
-    else if (value >= 0 && value <= 31)
+    else if (data >= 0 && data <= 31)
         std::cout << "Char: Non displayable" << std::endl;
     else
     {
-        char c = static_cast<char>(value);
+        char c = static_cast<char>(data);
         std::cout << "Char: " << c << std::endl;
     }
 }
 
+#include <stdio.h>
+
 void    Casts::castInt(void)
 {
-    int i = static_cast<int>(value);
+    int i = static_cast<int>(data);
     type > 0 ? std::cout << "Integer: Impossible" << std::endl : std::cout << "Integer: " << i << std::endl;
 }
 
@@ -103,9 +120,9 @@ void    Casts::castFloat(void)
         std::cout << "Float: nanf" << std::endl;
     else
     {
-        float f = static_cast<float>(value);
-        int i = static_cast<int>(value);
-        if (i == f)
+        float f = static_cast<float>(data);
+        int i = static_cast<int>(data);
+        if (i == f && isNumber(input) && input.length() < 7)
             std::cout << "Float: " << f << ".0f" << std::endl;
         else
             std::cout << "Float: " << f << "f" << std::endl;
@@ -122,11 +139,11 @@ void    Casts::castDouble(void)
         std::cout << "Double: nan" << std::endl;
     else
     {
-        int i = static_cast<int>(value);
-        if (i == value)
-            std::cout << "Double: " << value << ".0" << std::endl;
+        long long i = static_cast<int>(data);
+        if (i == data && isNumber(input) && input.length() < 7)
+            std::cout << "Double: " << data << ".0" << std::endl;
         else
-            std::cout << "Double: " << value << std::endl;
+            std::cout << "Double: " << data << std::endl;
     }
 }
 
@@ -142,12 +159,12 @@ std::string&    Casts::getInput(void)
 
 double    Casts::getValue(void)
 {
-    return (value);
+    return (data);
 }
 
-void    Casts::setValue(double x)
+void    Casts::setValue(double D)
 {
-    value = x;
+    data = D;
 }
 
 std::ostream &operator<<( std::ostream & out, Casts &obj)
