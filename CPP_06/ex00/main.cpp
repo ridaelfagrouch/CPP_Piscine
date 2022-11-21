@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:42:44 by garra             #+#    #+#             */
-/*   Updated: 2022/11/20 18:55:27 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:46:57 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(int ac, char **av)
             throw str;
         Casts obj(av[1]);
         obj.convertall();
+        std::cout << obj << std::endl;
     }
     catch(std::string str)
     {

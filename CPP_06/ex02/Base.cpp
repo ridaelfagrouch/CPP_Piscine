@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:11:02 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/21 11:21:37 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:00:15 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ void identify(Base* p)
     C *ptr2 = dynamic_cast<C*>(p);
 
     if (ptr)
-        std::cout << ptr->type << std::endl;
+        std::cout << "cast to " << ptr->type << " ✅​" << std::endl;
     else if (ptr1)
-        std::cout << ptr1->type << std::endl;
+        std::cout << "cast to " << ptr1->type << " ✅​" << std::endl;
     else
-        std::cout << ptr2->type << std::endl;
+        std::cout << "cast to " << ptr2->type << " ✅​" << std::endl;
 }
 
 void identify(Base& p)
@@ -65,7 +65,7 @@ void identify(Base& p)
     try
     {
         A &ptr = dynamic_cast<A&>(p);
-        std::cout << ptr.type << std::endl;
+        std::cout << "cast to " << ptr.type << " ✅​" << std::endl;
         if (i == 1) return;
     }
     catch(std::bad_cast exp)
@@ -76,7 +76,7 @@ void identify(Base& p)
     try
     {
         B &ptr1 = dynamic_cast<B&>(p);
-        std::cout << ptr1.type << std::endl;
+        std::cout << "cast to " << ptr1.type << " ✅​" << std::endl;
         if (i == 1) return;
     }
     catch(std::bad_cast exp)
@@ -87,7 +87,7 @@ void identify(Base& p)
     try
     {
         C &ptr2 = dynamic_cast<C&>(p);
-        std::cout << ptr2.type << std::endl;
+        std::cout << "cast to " << ptr2.type << " ✅​"  << std::endl;
         if (i == 1) return;
     }
     catch(std::bad_cast exp)

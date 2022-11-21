@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Casts.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:42:42 by garra             #+#    #+#             */
-/*   Updated: 2022/11/21 00:31:12 by garra            ###   ########.fr       */
+/*   Updated: 2022/11/21 12:27:00 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 enum Type {
    default_,
-    Ninff_,
-    Pinff_,
-    nanf_
+    Ninff,
+    Pinff,
+    nanf
 };
 
 class Casts {
@@ -33,19 +33,20 @@ class Casts {
         void castInt(void);
         void castFloat(void);
         void castDouble(void);
+        void checkDoubleFloatPseudo(char c);
 
     public:
         std::string str;
         Casts();
         ~Casts();
-        Casts(char *argv);
-        Casts( Casts &obj);
-        Casts& operator=(const Casts &obj);
+        Casts(char *av);
+        Casts( Casts &other);
+        Casts& operator=(const Casts &rhs);
         int getType(void);
         std::string& getInput(void);
         double getValue(void);
         void setValue(double D);
-        void detectType(char *argv);
+        void detectType(char *av);
         void convertall();
         bool isNumber(std::string str);
 };

@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:40:11 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/21 11:24:56 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/21 13:00:56 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
     Base *ptr = generate();
-    identify(ptr);
-    // Base &ref = *ptr;
-    // identify(ref);
+    // identify(ptr);
+    Base &ref = *ptr;
+    identify(ref);
 }
