@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:24:50 by garra             #+#    #+#             */
-/*   Updated: 2022/11/21 00:49:20 by garra            ###   ########.fr       */
+/*   Updated: 2022/11/21 10:06:55 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Data::Data(){}
 
-Data::Data(uintptr_t test) : Test(test)
+Data::Data(uintptr_t test, std::string name) : Test(test), Name(name)
 {}
 
 Data::~Data(){}
@@ -33,12 +33,10 @@ Data    &Data::operator=(const Data &rhs)
 
 uintptr_t Data::serialize(Data *ptr)
 {
-    uintptr_t uptr = reinterpret_cast<uintptr_t>(ptr);
-	return (uptr);
+	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
 Data* Data::deserialize(uintptr_t raw)
 {
-    Data *obj = reinterpret_cast<Data *>(raw);
-	return (obj);
+	return (reinterpret_cast<Data *>(raw));
 }
