@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FunTemp.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 13:46:28 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/21 17:57:40 by rel-fagr         ###   ########.fr       */
+/*   Created: 2022/11/22 14:30:37 by rel-fagr          #+#    #+#             */
+/*   Updated: 2022/11/22 16:01:52 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
+
+#include <iostream>
 
 
-int main( void ) {
-    Fixed a;
-    Fixed const b( Fixed( 5.0f ) * Fixed( 2 ) );
+template <typename Type> Type max(Type &x, Type &y)
+{
+    return (x > y) ? x : y;
+}
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
-    return 0;
+template <typename Type> Type min(Type &x, Type &y)
+{
+    return (x > y) ? y : x;
+}
+
+template <typename Type> void swap(Type &x, Type &y)
+{
+    Type tmp;
+
+    tmp = y;
+    y = x;
+    x = tmp;
 }

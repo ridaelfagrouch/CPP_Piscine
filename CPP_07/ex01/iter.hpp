@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/30 13:46:28 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/21 17:57:40 by rel-fagr         ###   ########.fr       */
+/*   Created: 2022/11/22 15:43:07 by rel-fagr          #+#    #+#             */
+/*   Updated: 2022/11/22 16:40:19 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#pragma once
 
+#include <iostream>
 
-int main( void ) {
-    Fixed a;
-    Fixed const b( Fixed( 5.0f ) * Fixed( 2 ) );
-
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << Fixed::max( a, b ) << std::endl;
-    return 0;
+template <typename type> void iter(type *ptr, size_t len, type (*f)(type))
+{
+    for(size_t i = 0; i < len; i++)
+        ptr[i] = f(ptr[i]);
 }
