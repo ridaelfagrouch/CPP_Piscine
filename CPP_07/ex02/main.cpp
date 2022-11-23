@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:15:03 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/23 15:08:04 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/23 15:17:59 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void test(void)
         std::cout << "float array size : " << floatArray1.size() << std::endl;
         std::cout << "string array size : " << stringArray1.size() << std::endl;
 
-        std::cout << "int array 1: " << intArray1.operator[](5) << std::endl;
-        std::cout << "int array 2: " << intArray2.operator[](5) << std::endl;
-        std::cout << "int array 3: " << intArray3.operator[](5) << std::endl;
+        std::cout << "int array 1: " << intArray1[5] << std::endl;
+        std::cout << "int array 2: " << intArray2[5] << std::endl;
+        std::cout << "int array 3: " << intArray3[5] << std::endl;
         std::cout << intArray1.operator[](12) << std::endl;
     }
     catch(std::exception& e)
@@ -45,9 +45,9 @@ void test(void)
         Array<float> floatArray3;
     
         floatArray3 = floatArray2;
-        std::cout << "float array 1: " << floatArray1.operator[](2) << std::endl;
-        std::cout << "float array 2: " << floatArray2.operator[](2) << std::endl;
-        std::cout << "float array 3: " << floatArray3.operator[](2) << std::endl;
+        std::cout << "float array 1: " << floatArray1[2] << std::endl;
+        std::cout << "float array 2: " << floatArray2[2] << std::endl;
+        std::cout << "float array 3: " << floatArray3[2] << std::endl;
         std::cout << floatArray1.operator[](10) << std::endl;
     }
     catch(std::exception& e)
@@ -62,9 +62,9 @@ void test(void)
         Array<std::string> stringArray3;
     
         stringArray3 = stringArray2;
-        std::cout << "string array 1: " << stringArray1.operator[](4) << std::endl;
-        std::cout << "string array 2: " << stringArray2.operator[](4) << std::endl;
-        std::cout << "string array 3: " << stringArray3.operator[](4) << std::endl;
+        std::cout << "string array 1: " << stringArray1[4] << std::endl;
+        std::cout << "string array 2: " << stringArray2[4] << std::endl;
+        std::cout << "string array 3: " << stringArray3[4] << std::endl;
         std::cout << stringArray1.operator[](15) << std::endl;
     }
     catch(std::exception& e)
@@ -77,5 +77,5 @@ void test(void)
 int main()
 {
     test();
-    system("leaks Array");
+    // system("leaks Array");
 }
