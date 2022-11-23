@@ -6,7 +6,7 @@
 /*   By: garra <garra@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:15:00 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/23 00:54:12 by garra            ###   ########.fr       */
+/*   Updated: 2022/11/23 01:08:18 by garra            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ public:
 	T &operator[](int index);
 	int	size() const;
 	~Array<T>();
+    class OutOfBound: public std::exception {
+		virtual const char* what() const throw()
+	};
 };
 
 template<typename T>
@@ -52,7 +55,7 @@ template<typename T>
 T &Array<T>::operator[](int index)
 {
 	if (index >= size || index < 0)
-        throw(std::exception());
+        throw Array::OutOfBound();
     else
         return (array[index]);
 }
@@ -61,10 +64,13 @@ T &Array<T>::operator[](int index)
 template<typename T>
 Array<T>::Array(const Array& other)
 {
-	array = new T[other.size()]();
     size = other.size();
-    for (int i = 0; i < this->size(); i++)
-        array[i] = other.array[i];
+    if (size > 0)
+    {
+	    array = new T[size]();
+        for (int i = 0; i < size; i++)
+            array[i] = other.array[i];
+    }
 }
 
 template<typename T>
@@ -96,4 +102,10 @@ template<typename T>
 Array<T>::~Array()
 {
 	delete [] array;
+}
+
+template<typename T>
+const char* Array<T>::OutOfBound::what() const throw()
+{
+	return "out of bounds";
 }
