@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:15:00 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/23 15:06:22 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/23 15:41:09 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 
 #include <iostream>
-#include <stdexcept>
+#include <exception>
 
 
 template <typename T>
