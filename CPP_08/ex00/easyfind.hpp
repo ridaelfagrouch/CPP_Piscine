@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:07:52 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/24 18:29:29 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/24 21:17:47 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@
 #include <vector>
 #include <deque>
 #include <list>
-#include<algorithm>
+#include <stack>
+#include <queue>
+#include <algorithm>
 #include <time.h>
 
-class NotFound: public std::exception 
+class NotFound: public std::exception
 {
 	virtual const char* what() const throw()
     {
-        return " Not found";
+        return " Not Found";
     }
 };
 
@@ -34,8 +36,7 @@ void easyfind(T &container, int find)
 
    location = std::find( container.begin(), container.end(), find);
     if (*location == find)
-        std::cout << "find" << std::endl;
+        std::cout << "Find" << std::endl;
     else
         throw NotFound();
-
 }
