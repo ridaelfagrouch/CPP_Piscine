@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 20:38:30 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/24 23:29:55 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:33:17 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
     try
     {
-        Span sp = Span(200);
+        Span sp = Span();
         sp.addNumber(6);
         sp.addNumber(3);
         sp.addNumber(17);

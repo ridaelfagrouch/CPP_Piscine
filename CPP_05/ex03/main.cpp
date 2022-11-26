@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:07:25 by garra             #+#    #+#             */
-/*   Updated: 2022/11/18 13:12:05 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:09:04 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void excep()
         // form = Create_form.makeForm("ShrubberyCreationForm", "trump");
         if (form != NULL)
         {
-                form->beSigned(rid);
-                form->execute(rid);
+            form->beSigned(rid);
+            form->execute(rid);
         }
     }
     catch(std::exception& e)

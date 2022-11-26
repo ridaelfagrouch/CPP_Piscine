@@ -6,7 +6,7 @@
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 20:38:39 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/24 23:03:20 by rel-fagr         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:26:06 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ private:
     std::vector<int> SetSpan1;
     std::set<int>::iterator Begin;
     std::set<int>::iterator End;
-    std::string excep;
 public:
     Span();
     Span(unsigned int size);
