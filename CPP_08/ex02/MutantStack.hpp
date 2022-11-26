@@ -5,33 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rel-fagr <rel-fagr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 13:59:51 by rel-fagr          #+#    #+#             */
-/*   Updated: 2022/11/25 16:19:56 by rel-fagr         ###   ########.fr       */
+/*   Created: 2022/11/25 23:54:20 by garra             #+#    #+#             */
+/*   Updated: 2022/11/26 11:43:16 by rel-fagr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+
 #include <vector>
 #include <deque>
 #include <list>
+#include <iterator>
 #include <stack>
-#include <queue>
-#include <algorithm>
 
-template<typename T, typename Container = std::deque<T>>
-class MutantStack
-{
-private:
-    // std::<container><type> MyStack;
+
+template<typename T, typename Container = std::deque<T> >
+class MutantStack: public std::stack<T, Container> {
 public:
-    MutantStack();
-    ~MutantStack();
-    MutantStack(const MutantStack &other);
-    MutantStack &operator=(const MutantStack &rhs);
-    void push(T add);
-    void pop(void);
-    typename T::iterator begin();
-    typename T::iterator end();
+	MutantStack<T, Container>(){};
+	~MutantStack<T, Container>(){};
+	MutantStack<T, Container>(MutantStack<T, Container> const & other){this->c = other.c;};
+	MutantStack<T, Container> & operator=(MutantStack<T, Container> const & rhs);
+
+	typedef typename Container::iterator iterator;
+	typedef typename Container::reverse_iterator revIterator;
+
+	iterator begin() {return this->c.begin();}
+	iterator end() {return this->c.end();}
+
+	revIterator rbegin() {return this->c.rbegin();}
+	revIterator rend() {return this->c.rend();}
 };
+
+template<typename T, typename Container >
+MutantStack<T, Container> & MutantStack<T, Container>::operator=(MutantStack<T, Container> const & rhs)
+{
+	if (this != &rhs)
+		this->c = std::move(rhs.c);
+	return (*this);
+}
